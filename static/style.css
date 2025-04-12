@@ -1,0 +1,66 @@
+/* Global Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #003366 !important; /* Professional navy blue */
+}
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.navbar .btn {
+    margin-left: 10px;
+}
+
+/* Hero Section */
+.container.text-center {
+    background: linear-gradient(135deg, #004080, #0073e6);
+    color: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #0073e6;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #005bb5;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+    transform: scale(1.02);
+}
+.card-body {
+    text-align: center;
+}
+
+/* Status Badges */
+.badge {
+    font-size: 14px;
+    padding: 5px 10px;
+}
+.bg-success {
+    background-color: #28a745 !important;
+}
+.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+/* Form Input */
+.form-control {
+    border-radius: 8px;
+}

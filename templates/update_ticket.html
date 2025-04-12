@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 20px 0;
+            color: #444;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            max-width: 600px;
+            margin-top: 40px;
+        }
+
+        .form-container label {
+            font-size: 14px;
+            color: #555;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 12px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 14px 20px;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .form-container .cancel-btn {
+            background-color: #6c757d;
+            margin-top: 10px;
+            text-align: center;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .form-container .cancel-btn:hover {
+            background-color: #5a6268;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Update Ticket</h1>
+
+    <div class="form-container">
+        <form method="POST">
+            <div>
+                <label for="destination">Destination</label>
+                <input type="text" id="destination" name="destination" value="{{ ticket.destination }}" required>
+            </div>
+
+            <div>
+                <label for="price">Price</label>
+                <input type="number" id="price" name="price" value="{{ ticket.price }}" required>
+            </div>
+
+            <div>
+                <label for="statuses">Status</label>
+                <select id="statuses" name="statuses" required>
+                    <option value="available" {% if ticket.statuses == 'available' %}selected{% endif %}>Available</option>
+                    <option value="booked" {% if ticket.statuses == 'booked' %}selected{% endif %}>Booked</option>
+                </select>
+            </div>
+
+            <div>
+                <input type="submit" value="Update Ticket">
+            </div>
+        </form>
+        <a href="{{ url_for('ticket') }}" class="cancel-btn">Cancel</a>
+    </div>
+
+</body>
+</html>

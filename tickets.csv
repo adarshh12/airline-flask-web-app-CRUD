@@ -1,0 +1,12 @@
+ticket_id,source,destination,price,statuses,users
+T001,NYC,LA,300.00,available,john_doe
+T002,SF,Chicago,250.00,Canceled,jane_smith
+T003,Miami,Dallas,200.00,Booked,john_doe
+T004,Boston,Seattle,350.00,Booked,mary_jane
+T005,Houston,Denver,275.00,Pending,alex_smith
+T006,Atlanta,Phoenix,220.00,Booked,sam_wilson
+T007,LA,NYC,300.00,Canceled,chris_evans
+T008,Chicago,Miami,280.00,Booked,steve_rogers
+T009,Seattle,Boston,350.00,Pending,natasha_romanoff
+T010,Denver,Houston,275.00,Booked,bruce_wayne
+T011,London,Bali,400,available,john_doe

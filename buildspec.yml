@@ -1,0 +1,22 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: latest
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 250738637992.dkr.ecr.eu-west-1.amazonaws.com
+  build:
+    commands:
+      - echo Building the Docker image...
+      - docker build -t airlines-repo .
+      - docker tag airlines-repo:latest 250738637992.dkr.ecr.eu-west-1.amazonaws.com/airlines-repo:latest
+  post_build:
+    commands:
+      - echo Pushing the Docker image to ECR...
+      - docker push 250738637992.dkr.ecr.eu-west-1.amazonaws.com/airlines-repo:latest
+      - echo Writing image definitions file...
+      - printf '[{"name":"airlines-app","imageUri":"250738637992.dkr.ecr.eu-west-1.amazonaws.com/airlines-repo:latest"}]' > imagedefinitions.json
+artifacts:
+  files: imagedefinitions.json
